@@ -1,0 +1,15 @@
+server:
+  port: 9001
+zuul:
+  ignored-services: "*"
+  prefix: /api
+  routes:
+    football-service:
+      path: /v1/football/**
+      serviceId: football-service-v1
+    football-service-v2:
+      path: /v2/football/**
+      serviceId: football-service-v2
+management:
+  security:
+    enabled: false
